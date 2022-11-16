@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import './index.scss';
 import App from './components/App';
+import { createRoot } from "react-dom/client";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App/>
-    </BrowserRouter>
-    
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const RenderApp = () => {
+  return (
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  )
+}
+
+createRoot(
+  document.getElementById('root'),
+).render(<RenderApp />);
