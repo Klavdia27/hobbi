@@ -1,0 +1,28 @@
+.navbar {
+  background-color: rgb(196, 115, 189);
+
+  .navbar-nav {
+    display: flex;
+    text-align: center;
+    justify-content: left;
+    .nav-item {
+      list-style-type: none; 
+      margin-left: 10px;
+      margin-right: 10px;
+      padding: 20px;
+      a {
+        text-decoration: none; 
+        font-size: 20px;
+        color:rgb(48, 7, 45);
+        font-weight: 600;
+      }
+      a:hover {
+        color:rgb(99, 12, 41);
+      }
+      .nav-link.active {
+        color: white;
+      }
+
+    }
+  }
+}
