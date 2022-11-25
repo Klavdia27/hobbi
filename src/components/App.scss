@@ -4,8 +4,17 @@
   margin: auto;
   background-color: bisque;
   padding: 0;
-
-
 }
-.container {
+.app__container {
+  display: flex;
+  //justify-content: space-between;
+  aside {
+    width: 216px;
+    padding: 8px;
+    background-color: rgb(225, 221, 207); // поменять потом цвет фона 
+  }
+  .aside-right {
+    margin-left: auto;
+  }
+
 }

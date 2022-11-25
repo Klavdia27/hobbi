@@ -1,5 +1,5 @@
 import React from "react";
-import ItemCard from "./itemCard/ItemCard";
+import ItemCard from "./ItemCard/ItemCard";
 import { Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home.jsx";
 import { About } from "./pages/About.jsx";
@@ -11,6 +11,7 @@ import AuthContext from "./contexts/AuthContext.js";
 import { BrowserRouter } from "react-router-dom";
 import Navbar from "./Navbar/Navbar";
 import './App.scss';
+import { PageCard } from "./pages/PageCard/PageCard";
 
 function App() {
   return (
@@ -20,18 +21,26 @@ function App() {
           <Header/>
         </div>
   
-          {/*  <ItemCard/> */}
+        
   
-        <main className="app__main container"> 
-          <Routes>
-          <Route path='/home' exact element={<Home/>} />
-          <Route path='/about'   element={<About/>} />
-          <Route path='/sections'   element={<Sections/>} />
-          <Route path='/contact'   element={<Contact/>} />
-          </Routes>
-        </main>
+        <div className="app__container">
+          <aside className="aside-left">left aside</aside>
+          <main className="app__main"> 
+            <Routes>
+            <Route path='/home' exact element={<Home/>} />
+            <Route path='/about'   element={<About/>} />
+            <Route path='/sections'   element={<Sections/>} />
+            <Route path='/contact'   element={<Contact/>} />
+            <Route path='/pagecard'   element={<PageCard/>} />
+            </Routes>
+          </main>
+          <aside className="aside-right">right aside</aside>
+        </div>
+
+
+
       </div>
-      </BrowserRouter>
+    </BrowserRouter>
   );
 }
 

@@ -1,9 +1,16 @@
-import React, {Fragment} from 'react';
+import React from 'react';
+import { ItemCards } from "../ItemCards/ItemCards.jsx";
 
 export const Home = () => {
   return (
-    <Fragment>
-      <h1>Home page</h1>
-    </Fragment>
+    <div>
+
+      <ItemCards/>
+
+      <div>
+        <h1>Home page</h1>
+        
+      </div>
+    </div>
   )
 }

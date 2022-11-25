@@ -1,22 +1,49 @@
-.item-card {
-  cursor: pointer;
-  width: 210px;
+// .item-card__page {
+//   margin: 20px 40px;
+// }
+
+.item-cardpage {
+  width: 630px;
   background-color: antiquewhite;
   border-radius: 4px;
   border: 1px solid rgb(231, 183, 183); // убрать потом или поменять на тень
   padding: 10px;
+  display: flex;
+  flex-direction: column;
   &__image {
     border-radius: 4px;
-    width: 210px; //проверить
-    height: 210px; // проверить , может не задавать??
+    margin: auto;
+    width: 400px; //проверить
+    height: 400px; // проверить , может не задавать??
      //центрироавть картинку
   }
   &__name {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
     margin-top: 4px;
     margin-bottom: 4px;
-
+  }
+  &__description {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
+  }
+  &__button-link {
+    display: flex;
+    max-width: 200px;
+    margin: auto;
+    background-color:rgb(231, 183, 183);
+    border: 2px solid rgb(241, 166, 180);
+    border-radius: 2px;
+    a {
+      cursor: pointer;
+      font-size: 18px;
+      text-transform: uppercase;
+      padding: 8px;
+      text-decoration: none;
+      list-style-type: none;
+      
+    }
   }
   &__line {
     border-top: 1px solid rgb(184, 182, 182);
@@ -52,11 +79,6 @@
       margin-left: 4px;
       margin-right: 4px;
     }
-  }
-  &__watch {
-    font-size: 14px;
-    color: grey;
-    margin: 0 8px;
   }
 
 }
