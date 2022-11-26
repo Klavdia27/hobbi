@@ -25,12 +25,13 @@ function App() {
           <Leftaside/>
 
           <main className="app__main"> 
+          
             <Routes>
-            <Route path='/' exact element={<Home/>} />
-            <Route path='/about'   element={<About/>} />
-            <Route path='/sections'   element={<Sections/>} />
-            <Route path='/contact'   element={<Contact/>} />
-            <Route path='/pagecard'   element={<PageCard/>} />
+              <Route path='/' exact element={<Home/>} />
+              <Route path='/about'   element={<About/>} />
+              <Route path='/sections'   element={<Sections/>} />
+              <Route path='/contact'   element={<Contact/>} />
+              <Route path='/pagecard'   element={<PageCard/>} />
             </Routes>
           </main>
 
