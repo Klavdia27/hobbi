@@ -5,12 +5,12 @@ export const Home = () => {
   return (
     <div>
 
-      <ItemCards/>
-
       <div>
         <h1>Home page</h1>
-        
       </div>
+
+      <ItemCards/>
+
     </div>
   )
 }

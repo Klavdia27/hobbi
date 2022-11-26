@@ -12,19 +12,24 @@ import { BrowserRouter } from "react-router-dom";
 import Navbar from "./Navbar/Navbar";
 import './App.scss';
 import { PageCard } from "./pages/PageCard/PageCard";
+import Leftaside from "./Leftaside/LeftAside";
+import Rightaside from "./Rightaside/Rightaside";
 
 function App() {
+
+
+
   return (
     <BrowserRouter>
       <div className="app">
         <div>
           <Header/>
         </div>
-  
-        
-  
+
         <div className="app__container">
-          <aside className="aside-left">left aside</aside>
+
+          <Leftaside/>
+
           <main className="app__main"> 
             <Routes>
             <Route path='/home' exact element={<Home/>} />
@@ -34,7 +39,9 @@ function App() {
             <Route path='/pagecard'   element={<PageCard/>} />
             </Routes>
           </main>
-          <aside className="aside-right">right aside</aside>
+
+          <Rightaside/>
+
         </div>
 
 
