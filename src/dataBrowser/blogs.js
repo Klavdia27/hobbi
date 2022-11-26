@@ -32,6 +32,26 @@ const blogs = [
       "watch": "25",
       "image": "https://4.bp.blogspot.com/-Jd_wOKfTg6o/W5ZRtuunOGI/AAAAAAAAOng/sogw_s-KEBc7-exzGMBAJgD9PEU8nnQ8wCLcBGAs/s1600/vyazanaya-zebra-kryuchkom.jpg",
     },
+    {
+      "name": "Подставка для чашек в виде яблок",
+      "description": "С помощью данной схемы которая представлена здесь, вы сможете для своей кухни связать крючком красивые поставки для чашек в виде яблок.",
+      "section": "Вязание для дома",
+      "subsection": "Игрушки",
+      "date": "26/11/2022",
+      "countcomment": "3",
+      "watch": "25",
+      "image": "http://rukadelkino.ru/uploads/posts/2015-10/1443860802348f1a402f8.jpeg",
+    },
+    {
+      "name": "Сарафан для девочки Елочка спицами",
+      "description": "С помощью данной схемы которая представлена здесь, вы сможете для своей кухни связать крючком красивые поставки для чашек в виде яблок.",
+      "section": "Вязание для детей",
+      "subsection": "Сарафан",
+      "date": "26/11/2022",
+      "countcomment": "3",
+      "watch": "25",
+      "image": "https://www.mastera-rukodeliya.ru/media/uploads/2019/12/24/24.jpg",
+    }
 ]
 
 export default blogs;

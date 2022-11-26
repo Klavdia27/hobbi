@@ -7,7 +7,7 @@ function Navbar() {
     <div className="navbar">
       <ul className="navbar-nav">
         <li className="nav-item">
-          <a href="./home" className="nav-link">Главная</a>
+          <a href="./" className="nav-link">Главная</a>
         </li>
         <li className="nav-item">
           <a href="./sections" className="nav-link">Разделы</a>
