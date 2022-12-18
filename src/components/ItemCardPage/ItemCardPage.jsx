@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './ItemCardPage.scss';
 import zebra from "../../images/item-images/19.11.2022-zebra.jpeg";
 import icondate from "../../images/icon/calendar.png";
 import iconcount from "../../images/icon/comments.png";
+import { useLocation, useParams } from 'react-router-dom';
+import blogs from '../../dataBrowser/blogs';
 
 const item = 
   {
@@ -16,6 +18,25 @@ const item =
   }
 
 export const ItemCardPage = () => {
+  const [elem, setElem] = useState();
+
+  const location = useParams();
+
+  useEffect(() => {
+    console.log(location);
+
+    if (location) {
+      blogs.forEach((it) => {
+        if (it.id === location.id) {
+          setElem(it)
+        }
+      } )
+    }
+
+  },[location]);
+
+  
+
   return (
     
     //<div className="item-card__page">
@@ -23,26 +44,26 @@ export const ItemCardPage = () => {
       <div className="item-cardpage">
         <div className="item-cardpage__date">
             <img className="item-cardpage__icon-date" src={icondate} alt="ic"  />
-            {item.date}
+            {elem?.date}
         </div>
 
-        <img className="item-cardpage__image" src={zebra} alt="zebra" />
+        <img className="item-cardpage__image" src={elem?.image} alt="zebra" />
         <div className="item-cardpage__name">
-          {item.name}
+          {elem?.name}
         </div>
-        <div className="item-cardpage__description"> {item.description} </div>
+        <div className="item-cardpage__description"> {elem?.description} </div>
 
         <div className="item-cardpage__line"></div>
-        <div dangerouslySetInnerHTML={{__html: `${item.text}`}}></div> 
+        <div dangerouslySetInnerHTML={{__html: `${elem?.text}`}}></div> 
 
         <button className="item-cardpage__button-link">
-          <a href={item.link} className="link" rel="noreferrer" target="_blank">смотреть схему</a>
+          <a href={elem?.link} className="link" rel="noreferrer" target="_blank">смотреть схему</a>
         </button>
 
         <div className="item-cardpage__date-comment">
           <div className="item-cardpage__comment-count">
             <img src={iconcount} alt="ic" className="item-cardpage__comment-icon" />
-            {item.countcomment}
+            {elem?.countcomment}
         </div>
         </div>
       </div>

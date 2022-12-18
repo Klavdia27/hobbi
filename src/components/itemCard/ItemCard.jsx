@@ -4,28 +4,17 @@ import './ItemCard.scss';
 import icondate from "../../images/icon/calendar.png";
 import iconcount from "../../images/icon/comments.png";
 // import blogs from '../../dataBrowser/blogs';
-import { Link } from '@mui/material';
 
 
-// const item = 
-//   {
-//     name: "Вязаная зебра",
-//     description: "Вязаная игрушка - зебра. Описание вязания от Стэйси.",
-//     date: "19/11/2022",
-//     countcomment: "3",
-//     watch: "23",
-//     image: "https://3.bp.blogspot.com/-f9Fuuk-QJoE/VzhnVVM2aaI/AAAAAAAAHcM/eXeoha05CDIwSJ9E6v5H9afJrIaBBgYEgCLcB/s1600/74219357_large_3511355_1532803_80173nothumb500_1_.jpg"
-//   }
 
 function ItemCard({blog}) {
 
   return (
     <div className="item-card">
-      <Link to={`/users/${blog.id}`}>
+
         <div className="item-card__image-block">
         <img className="item-card__image" src={blog.image} alt="avatar"/>
         </div>
-      </Link> 
 
       {/* <img className="item-card__image" src={blog.image} alt="avatar"/> */}
 

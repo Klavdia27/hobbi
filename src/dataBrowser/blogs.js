@@ -8,6 +8,8 @@ const blogs = [
     "section": "Вязание для дома",
     "subsection": "Игрушки",
     "description": "Вязаная игрушка - зебра. Описание вязания от Стэйси.",
+    "text": "Начинаем с головы <br> Сокращения:<br></br> КА – кольцо амигуруми<br>ВП – воздушная петля<br>ПС - полустолбик<br>СБН – столбик без накида<br>ПСН – полустолбик с накидом<br>Убавка – 2 столбика вместе<br>Прибавка – 2 столбика в один<br></br>Набивать в ходе процесса",
+    "lenk": "https://www.liveinternet.ru/users/len4ika/post166278000/",
     "date": "19/11/2022",
     "countcomment": "3",
     "watch": "23",
@@ -16,9 +18,11 @@ const blogs = [
     {
       "id": "2",
       "name": "Лошадь, зебра, единорог",
-      "description": "Вязаные лошадь, зебра, единорог по одной схеме вязания.",
       "section": "Вязание для дома",
       "subsection": "Игрушки",
+      "description": "Вязаные лошадь, зебра, единорог по одной схеме вязания.",
+      "text": "",
+      "link": "",
       "date": "25/11/2022",
       "countcomment": "3",
       "watch": "8",
@@ -30,8 +34,10 @@ const blogs = [
       "description": "Оригинальная вязаная игрушка зебра в горошек от Марины Дудки. Бесплатный мастер-класс по вязанию зебры и жилетки для нее крючком.",
       "section": "Вязание для дома",
       "subsection": "Игрушки",
+      "text": "",
+      "link": "",
       "date": "25/11/2022",
-       "countcomment": "3",
+      "countcomment": "3",
       "watch": "25",
       "image": "https://4.bp.blogspot.com/-Jd_wOKfTg6o/W5ZRtuunOGI/AAAAAAAAOng/sogw_s-KEBc7-exzGMBAJgD9PEU8nnQ8wCLcBGAs/s1600/vyazanaya-zebra-kryuchkom.jpg",
     },
@@ -41,6 +47,8 @@ const blogs = [
       "description": "С помощью данной схемы которая представлена здесь, вы сможете для своей кухни связать крючком красивые поставки для чашек в виде яблок.",
       "section": "Вязание для дома",
       "subsection": "Игрушки",
+      "text": "",
+      "link": "",
       "date": "26/11/2022",
       "countcomment": "3",
       "watch": "25",
@@ -52,6 +60,8 @@ const blogs = [
       "description": "С помощью данной схемы которая представлена здесь, вы сможете для своей кухни связать крючком красивые поставки для чашек в виде яблок.",
       "section": "Вязание для детей",
       "subsection": "Сарафан",
+      "text": "",
+      "link": "",
       "date": "26/11/2022",
       "countcomment": "3",
       "watch": "25",
@@ -62,13 +72,15 @@ const blogs = [
       "name": "Бикини купальник крючком ANDI BAGUS DAKOTA",
       "description": "Бикини ANDI BAGUS «DAKOTA» Дата проекта: февраль 2017 Техника: вязание крючком Материалы: пряжа Пехорка «Прохладная», нить, игла, чашки для лифа страна: Россия цвет: св. коралл-351 состав: 50% хлопок, 50% вискоза Источник описания модели: andibagus , частично из Купальник “Сиреневое чудо”",
       "subsection": "Купальник",
+      "text": "",
+      "link": "",
       "date": "26/11/2022",
       "countcomment": "3",
       "watch": "25",
       "image": "https://kru4ok.ru/wp/wp-content/uploads/2019/01/kru4ok-ru-bikini-kupal-nik-kryuchkom-andi-bagus-dakota-rabota-alise-crochet-011618-480x480.jpg",
     }
 
-    
+
 ]
 
 export default blogs;
