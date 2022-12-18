@@ -5,15 +5,20 @@
   border-radius: 4px;
   border: 1px solid rgb(231, 183, 183); // убрать потом или поменять на тень
   padding: 10px;
+  &__image-block {
+    display: inline-block; /* Строчно-блочный элемент */
+    overflow: hidden; /* Скрываем всё за контуром */
+  }
   &__image {
     border-radius: 4px;
     width: 210px; //проверить
     height: 210px; // проверить , может не задавать??
-     //центрироавть картинку
-    //  display: block;
-    //  margin-left: auto;
-    //  margin-right: auto;
+    transition: 1s; /* Время эффекта */
+    display: block; /* Убираем небольшой отступ снизу */
   }
+  &__image:hover {
+    transform: scale(1.2); /* Увеличиваем масштаб */
+   }
   &__name {
     font-size: 20px;
     font-weight: bold;

@@ -1,11 +1,10 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home.jsx";
 import { About } from "./pages/About.jsx";
 import { Sections } from "./pages/Sections.jsx";
 import Header from "../components/Header/Header";
 import { Contact } from "./pages/Contact.jsx";
-import { BrowserRouter } from "react-router-dom";
 import './App.scss';
 import { PageCard } from "./pages/PageCard/PageCard";
 import Leftaside from "./Leftaside/LeftAside";
@@ -25,7 +24,7 @@ function App() {
           <Leftaside/>
 
           <main className="app__main"> 
-          
+
             <Routes>
               <Route path='/' exact element={<Home/>} />
               <Route path='/about'   element={<About/>} />

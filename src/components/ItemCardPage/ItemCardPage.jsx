@@ -8,8 +8,10 @@ const item =
   {
     name: "Вязаная зебра",
     description: "Вязаная игрушка - зебра. Описание вязания от Стэйси.",
+    text: "Начинаем с головы <br> Сокращения:<br></br> КА – кольцо амигуруми<br>ВП – воздушная петля<br>ПС - полустолбик<br>СБН – столбик без накида<br>ПСН – полустолбик с накидом<br>Убавка – 2 столбика вместе<br>Прибавка – 2 столбика в один<br></br>Набивать в ходе процесса",
     date: "19/11/2022",
     countcomment: "3",
+    link: "https://www.liveinternet.ru/users/len4ika/post166278000/",
     image: "https://3.bp.blogspot.com/-f9Fuuk-QJoE/VzhnVVM2aaI/AAAAAAAAHcM/eXeoha05CDIwSJ9E6v5H9afJrIaBBgYEgCLcB/s1600/74219357_large_3511355_1532803_80173nothumb500_1_.jpg"
   }
 
@@ -28,17 +30,15 @@ export const ItemCardPage = () => {
         <div className="item-cardpage__name">
           {item.name}
         </div>
-        {/* <div>
-          Описание: {item.description}
-        </div> */}
+        <div className="item-cardpage__description"> {item.description} </div>
+
         <div className="item-cardpage__line"></div>
-        <div className="item-cardpage__description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-           Veritatis, molestiae laborum earum reiciendis sit in debitis sed molestias quam? Laudantium.
-        </div>
+        <div dangerouslySetInnerHTML={{__html: `${item.text}`}}></div> 
+
         <button className="item-cardpage__button-link">
-          <a href="https://www.liveinternet.ru/users/len4ika/post166278000/" className="link"  target="_blank">смотреть схему</a>
+          <a href={item.link} className="link" rel="noreferrer" target="_blank">смотреть схему</a>
         </button>
+
         <div className="item-cardpage__date-comment">
           <div className="item-cardpage__comment-count">
             <img src={iconcount} alt="ic" className="item-cardpage__comment-icon" />

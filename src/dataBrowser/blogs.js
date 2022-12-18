@@ -48,7 +48,7 @@ const blogs = [
     },
     {
       "id": "5",
-      "name": "Сарафан для девочки Елочка спицами",
+      "name": "Сарафан для девочки «Елочка» спицами",
       "description": "С помощью данной схемы которая представлена здесь, вы сможете для своей кухни связать крючком красивые поставки для чашек в виде яблок.",
       "section": "Вязание для детей",
       "subsection": "Сарафан",
@@ -56,7 +56,18 @@ const blogs = [
       "countcomment": "3",
       "watch": "25",
       "image": "https://www.mastera-rukodeliya.ru/media/uploads/2019/12/24/24.jpg",
+    },
+    {
+      "id": "6",
+      "name": "Бикини купальник крючком ANDI BAGUS DAKOTA",
+      "description": "Бикини ANDI BAGUS «DAKOTA» Дата проекта: февраль 2017 Техника: вязание крючком Материалы: пряжа Пехорка «Прохладная», нить, игла, чашки для лифа страна: Россия цвет: св. коралл-351 состав: 50% хлопок, 50% вискоза Источник описания модели: andibagus , частично из Купальник “Сиреневое чудо”",
+      "subsection": "Купальник",
+      "date": "26/11/2022",
+      "countcomment": "3",
+      "watch": "25",
+      "image": "https://kru4ok.ru/wp/wp-content/uploads/2019/01/kru4ok-ru-bikini-kupal-nik-kryuchkom-andi-bagus-dakota-rabota-alise-crochet-011618-480x480.jpg",
     }
+
     
 ]
 
