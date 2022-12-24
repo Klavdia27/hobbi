@@ -31,10 +31,20 @@
     padding-bottom: 10px;
     font-size: 18px;
   }
+  &__author {
+    margin-left: auto;
+    a {
+      color: #696969;
+    }
+  }
+  &__instruction-title {
+    color: rgb(95, 44, 97);
+    font-weight: bold;
+  }
   &__button-link {
     display: flex;
     max-width: 200px;
-    margin: auto;
+    margin: 8px auto;
     background-color:rgb(231, 183, 183);
     border: 2px solid rgb(241, 166, 180);
     border-radius: 2px;
@@ -45,7 +55,6 @@
       padding: 8px;
       text-decoration: none;
       list-style-type: none;
-      
     }
   }
   &__line {

@@ -1,16 +1,12 @@
 import React from 'react';
 import './ItemCard.scss';
-// import zebra from "../../images/item-images/19.11.2022-zebra.jpeg";
 import icondate from "../../images/icon/calendar.png";
 import iconcount from "../../images/icon/comments.png";
-// import blogs from '../../dataBrowser/blogs';
-
-
 
 function ItemCard({blog}) {
 
   return (
-    <div className="item-card">
+    <div className="item-card" >
 
         <div className="item-card__image-block">
         <img className="item-card__image" src={blog.image} alt="avatar"/>
