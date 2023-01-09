@@ -8,7 +8,7 @@ function Navbar() {
     <div className="navbar">
       <ul className="navbar-nav">
         <li className="nav-item">
-          <NavLink to="/" className="nav-link" exact>Главная</NavLink>
+          <NavLink to="/" className="nav-link">Главная</NavLink>
         </li>
         <li className="nav-item">
           <NavLink to="/sections" className="nav-link">Разделы</NavLink>

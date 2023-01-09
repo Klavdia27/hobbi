@@ -10,6 +10,7 @@ import { PageCard } from "./pages/PageCard/PageCard";
 import Leftaside from "./Leftaside/LeftAside";
 import Rightaside from "./Rightaside/Rightaside";
 import {Filter} from "./pages/Filter";
+import {Admin} from "./pages/Admin";
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
               <Route path='/contact'   element={<Contact/>} />
               <Route path='/pagecard/:id'   element={<PageCard/>} />
               <Route path='/:section/:subsection'   element={<Filter/>} />
+              <Route path='/admin-panel'   element={<Admin/>} />
             </Routes>
           </main>
 
