@@ -9,6 +9,7 @@ import './App.scss';
 import { PageCard } from "./pages/PageCard/PageCard";
 import Leftaside from "./Leftaside/LeftAside";
 import Rightaside from "./Rightaside/Rightaside";
+import {Filter} from "./pages/Filter";
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
               <Route path='/sections'   element={<Sections/>} />
               <Route path='/contact'   element={<Contact/>} />
               <Route path='/pagecard/:id'   element={<PageCard/>} />
+              <Route path='/:section/:subsection'   element={<Filter/>} />
             </Routes>
           </main>
 
