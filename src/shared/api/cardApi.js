@@ -17,5 +17,11 @@ export const cardApi = {
         const card = await axios.get(`http://localhost:5000/api/card/filter?section=${str1}&subsection=${str2}`)
 
         return card.data
+    },
+
+    createCard: async (data) => {
+        await axios.post(`http://localhost:5000/api/create/card`, {data})
+
+        return 'Создалось'
     }
 }

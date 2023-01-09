@@ -3,7 +3,7 @@ import './Leftaside.scss';
 import Subtitle from "../Subtitle/Subtitle.jsx";
 import {filter} from "../../shared/data/filter";
 import {Link} from "react-router-dom";
-import {getCorrectUrl} from "../../helpers/getCorrectUrl";
+import Url from "../../helpers/url";
 
 function Leftaside() {
   return (
@@ -15,7 +15,7 @@ function Leftaside() {
                 <div className="aside-left__list-subtitle">
                     <ul>
                         {item.items.map(obj => (
-                            <Link to={getCorrectUrl(item.title, obj.title)}>
+                            <Link key={obj.title} to={Url.getCorrectUrl(item.title, obj.title)}>
                                 <li key={obj.title} className="list-item">{obj.title}</li>
                             </Link>
                         ))}

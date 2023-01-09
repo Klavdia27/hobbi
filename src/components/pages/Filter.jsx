@@ -1,24 +1,46 @@
-import React, {Fragment, useEffect} from 'react';
-import {useParams} from "react-router-dom";
+import React, {Fragment, useEffect, useState} from 'react';
+import {Link, useParams} from "react-router-dom";
 import {cardApi} from "../../shared/api/cardApi";
+import ItemCard from "../ItemCard/ItemCard";
+import {useDispatch} from "react-redux";
+import Url from "../../helpers/url";
 
 export const Filter = () => {
     const location = useParams();
+    const [cards, setCards] = useState(null)
+    const dispatch = useDispatch();
+
+    const addCount = () => {
+        dispatch({type:"ADD_COUNT", payload: 1})
+    }
 
     useEffect(() => {
         if (location) {
             const fetch = async () => {
-                console.log(await cardApi.getCardByFilter(location.section, location.subsection))
+                const section = Url.getSectionFromUrl(location.section)
+                const subsection = Url.getSubSectionFromUrl(location.section, location.subsection)
+                setCards(await cardApi.getCardByFilter(section, subsection))
             }
 
             fetch()
-
         }
     },[location]);
 
     return (
-        <Fragment>
-            <h1>Filter page</h1>
-        </Fragment>
+        <div>
+            <div>
+                <h1>Filter page</h1>
+            </div>
+
+            <div className="grid-container">
+                {cards && cards.map(blog =>
+                    <Link to={`/pagecard/${blog._id}`} onClick={() => addCount()}>
+                        <ItemCard key={blog.id} blog={blog}/>
+                    </Link>
+                )}
+            </div>
+
+            {cards && cards.length === 0 && <p>Данных нет</p>}
+        </div>
     )
 }

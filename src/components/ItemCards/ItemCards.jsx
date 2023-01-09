@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import ItemCard from "../ItemCard/ItemCard.jsx";
 import './ItemCards.scss';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import {cardApi} from "../../shared/api/cardApi";
 
 export const ItemCards = () => {
