@@ -12,7 +12,7 @@ export const ItemCardPage = () => {
 
   const location = useParams();
   const count = useSelector(state => state.count);
-
+  
   useEffect(() => {
     //console.log('нажали на карточку');
     console.log(location);
@@ -21,11 +21,13 @@ export const ItemCardPage = () => {
     if (location) {
       blogs.forEach((it) => {
         if (it.id === location.id) {
-          setElem(it)
+          setElem(it);
+          console.log(it.watch); //выводит количество просмотров 
+         // it.watch = count;
         }
       } )
     }
-
+    
   },[location]);
 
   
@@ -35,6 +37,7 @@ export const ItemCardPage = () => {
     //<div className="item-card__page">
 
       <div className="item-cardpage">
+        
         <div className="item-cardpage__date">
             <img className="item-cardpage__icon-date" src={icondate} alt="ic"  />
             {elem?.date}
@@ -50,11 +53,8 @@ export const ItemCardPage = () => {
         <div dangerouslySetInnerHTML={{__html: `${elem?.conventions}`}}></div> 
 <div>
 
-
-
 </div>
         {/* <div className="item-cardpage__line"></div> */}
-
         <div>{elem?.instruction?.map((el) => 
                 <div>
                   <br /> 
