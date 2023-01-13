@@ -129,31 +129,31 @@ export const Admin = () => {
 
             <div className={styles.admin__form}>
                 <form onSubmit={handleSubmit}>
-                    <div>
+                    <div className={styles.name}>
                         <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder={'Имя'}/>
                     </div>
 
-                    <div>
+                    <div className={styles.section}>
                         <input type="text" value={section} onChange={(e) => setSection(e.target.value)} placeholder={'Секция'}/>
                     </div>
 
-                    <div>
+                    <div className={styles.subsection}>
                         <input type="text" value={subsection} onChange={(e) => setSubsection(e.target.value)} placeholder={'Подсекция'}/>
                     </div>
 
-                    <div>
+                    <div className={styles.description}>
                         <textarea value={description} onChange={(e) => setDescription(e.target.value)} placeholder={'Описание'}/>
                     </div>
 
-                    <div>
+                    <div className={styles.description}>
                         <textarea value={shortDescription} onChange={(e) => setShortDescription(e.target.value)} placeholder={'Короткое описание'}/>
                     </div>
 
-                    <div>
+                    <div className={styles.author}>
                         <input type="text" value={author} onChange={(e) => setAuthor(e.target.value)} placeholder={'Автор'}/>
                     </div>
 
-                    <div>
+                    <div className={styles.material}>
                         <p>Материалы</p>
 
                         {material.map((item, index) => (
@@ -170,7 +170,7 @@ export const Admin = () => {
 
                     <br/>
 
-                    <div>
+                    <div className={styles.conventions}>
                         <p>Условности</p>
 
                         {conventions.map((item, index) => (
@@ -187,7 +187,7 @@ export const Admin = () => {
 
                     <br/>
 
-                    <div>
+                    <div className={styles.instruction}>
                         <p>Инструкция</p>
 
                         {instruction.map((item, index) => (
@@ -195,7 +195,7 @@ export const Admin = () => {
                                 <input type="text"
                                        value={item.title}
                                        onChange={e => handleChangeInstruction(e.target.value, index, 'title')}
-                                       placeholder={'Имя'}
+                                       placeholder={'Подзаголовок'}
                                 />
 
                                 <input type="text"
@@ -217,11 +217,11 @@ export const Admin = () => {
 
                     <br/>
 
-                    <div>
+                    <div className={styles.link}>
                         <input type="text" value={link} onChange={(e) => setLink(e.target.value)} placeholder={'Ссылка'}/>
                     </div>
 
-                    <div>
+                    <div className={styles.image}>
                         <input type="text" value={image} onChange={(e) => setImage(e.target.value)} placeholder={'Картинка'}/>
                     </div>
 

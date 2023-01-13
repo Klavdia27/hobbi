@@ -1,5 +1,54 @@
 .admin {
   &__form {
+    margin-left: 30px;
+    input {
+      font-size: 20px;
+      border: 2px solid #8e58b8 ;
+      margin-bottom: 10px;
+    }
+    
+    .name, .section, .subsection, .author,
+    .material, .conventions, .link, .image {
+      input {
+        width: 400px;
+      }
+    }
 
+    .description {
+      textarea {
+        width: 500px;
+        height: 50px;
+        font-size: 18px;
+        border: 2px solid #8e58b8 ;
+        margin-bottom: 10px;
+
+      }
+    }
+    .instruction {
+      div {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+
+        input:nth-child(1) {
+          margin-right: 10px;
+        }
+        input:nth-child(even) {
+          width: 500px;
+          height: 200px;
+        }
+      }
+      div:nth-child(2n+1) {
+        input {
+          border: 2px solid #44e3bb;
+        }
+      }
+      div:nth-child(2n) {
+        input {
+          border: 2px solid #8e58b8 ;
+        }
+      }
+
+    }
   }
 }
