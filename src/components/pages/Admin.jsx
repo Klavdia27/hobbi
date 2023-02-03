@@ -6,8 +6,8 @@ import {generateHtml} from "../../helpers/generateHtml";
 
 export const Admin = () => {
     const [name, setName] = useState('')
-    const [section, setSection] = useState('')
-    const [subsection, setSubsection] = useState('')
+    const [section, setSection] = useState('Узоры вязания')
+    const [subsection, setSubsection] = useState('Узоры спицами')
     const [description, setDescription] = useState('')
     const [shortDescription, setShortDescription] = useState('')
     const [author, setAuthor] = useState('')
@@ -18,7 +18,7 @@ export const Admin = () => {
     const [image, setImage] = useState('')
 
     const handleSubmit = async (e) => {
-        e.preventDefault()
+        e.preventDefault();
 
         if (validation({name, section, subsection, description, shortDescription, author, material, conventions, instruction, link, image})) {
             const result = {}
@@ -36,8 +36,8 @@ export const Admin = () => {
             result.image = image
 
             setName('')
-            setSection('')
-            setSubsection('')
+            setSection('Узоры вязания')
+            setSubsection('Узоры спицами')
             setDescription('')
             setShortDescription('')
             setAuthor('')
@@ -48,13 +48,11 @@ export const Admin = () => {
             setImage('')
 
             await cardApi.createCard(result)
+
+            e.target.reset()
         }
 
-
-
         else alert('No')
-
-
     }
 
     const handleChangeInstruction = (text, index, field) => {
@@ -134,11 +132,82 @@ export const Admin = () => {
                     </div>
 
                     <div>
-                        <input type="text" value={section} onChange={(e) => setSection(e.target.value)} placeholder={'Секция'}/>
+                        <select name="section" id="" onChange={(e) => setSection(e.target.value)} defaultValue={'Узоры вязания'}>
+                            <option value="Узоры вязания">Узоры вязания</option>
+                            <option value="Вязание для детей">Вязание для детей</option>
+                            <option value="Вязание для женщин">Вязание для женщин</option>
+                            <option value="Вязание для мужчин">Вязание для мужчин</option>
+                            <option value="Вязание для дома">Вязание для дома</option>
+                        </select>
                     </div>
 
                     <div>
-                        <input type="text" value={subsection} onChange={(e) => setSubsection(e.target.value)} placeholder={'Подсекция'}/>
+                        <select name="subsection" id="" onChange={(e) => setSubsection(e.target.value)} defaultValue={'Узоры спицами'}>
+                            {section === 'Узоры вязания' && (
+                                <>
+                                    <option value="Узоры спицами">Узоры спицами</option>
+                                    <option value="Узоры крючком">Узоры крючком</option>
+                                </>
+                            )}
+
+                            {section === 'Вязание для детей' && (
+                                <>
+                                    <option value="Комбинезон, боди, песочник">Комбинезон, боди, песочник</option>
+                                    <option value="Безрукавка, жилет">Безрукавка, жилет</option>
+                                    <option value="Свитер, полувер, жакет">Свитер, полувер, жакет</option>
+                                    <option value="Пончо, болеро, накидка">Пончо, болеро, накидка</option>
+                                    <option value="Крестильный набор ">Крестильный набор </option>
+                                    <option value="Топ, ажурная кофточка">Топ, ажурная кофточка</option>
+                                    <option value="Платье, сарафан">Платье, сарафан</option>
+                                    <option value="Перчатки, варежки">Перчатки, варежки</option>
+                                    <option value="Шапка, шарфик, берет">Шапка, шарфик, берет</option>
+                                    <option value="Штаны, шорты">Штаны, шорты</option>
+                                    <option value="Юбка">Юбка</option>
+                                </>
+                            )}
+
+                            {section === 'Вязание для женщин' && (
+                                <>
+                                    <option value="Комбинезон, боди, песочник">Комбинезон, боди, песочник</option>
+                                    <option value="Безрукавка, жилет">Безрукавка, жилет</option>
+                                    <option value="Свитер, полувер, жакет">Свитер, полувер, жакет</option>
+                                    <option value="Пончо, болеро, накидка">Пончо, болеро, накидка</option>
+                                    <option value="Топ, ажурная кофточка">Топ, ажурная кофточка</option>
+                                    <option value="Платье, сарафан">Платье, сарафан</option>
+                                    <option value="Перчатки, варежки">Перчатки, варежки</option>
+                                    <option value="Шарф, снуд, палантин">Шарф, снуд, палантин</option>
+                                    <option value="Юбка, штаны, шорты">Юбка, штаны, шорты</option>
+                                    <option value="Шапка, берет">Шапка, берет</option>
+                                    <option value="Пальто, кардиган">Пальто, кардиган</option>
+                                    <option value="Носки, тапки">Носки, тапки</option>
+                                    <option value="Вязание полным">Вязание полным</option>
+                                </>
+                            )}
+
+                            {section === 'Вязание для мужчин' && (
+                                <>
+                                    <option value="Безрукавка, жилет">Безрукавка, жилет</option>
+                                    <option value="Свитер, полувер, жакет">Свитер, полувер, жакет</option>
+                                    <option value="Шапка, шарф, берет">Шапка, шарф, берет</option>
+                                    <option value="Носки, тапки">Носки, тапки</option>
+                                </>
+                            )}
+
+                            {section === 'Вязание для дома' && (
+                                <>
+                                    <option value="Покрывало, плед">Покрывало, плед</option>
+                                    <option value="Подушки">Подушки</option>
+                                    <option value="Коврики, сидушки">Коврики, сидушки</option>
+                                    <option value="Салфетки, скатерти">Салфетки, скатерти</option>
+                                    <option value="Корзинки, шкатулки">Корзинки, шкатулки</option>
+                                    <option value="Цветы">Цветы</option>
+                                    <option value="Вяжем к празднику">Вяжем к празднику</option>
+                                    <option value="Игрушки">Игрушки</option>
+                                    <option value="Вязание для животных">Вязание для животных</option>
+                                    <option value="Другие полезные вещи">Другие полезные вещи</option>
+                                </>
+                            )}
+                        </select>
                     </div>
 
                     <div>

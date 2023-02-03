@@ -23,5 +23,11 @@ export const cardApi = {
         await axios.post(`http://localhost:5000/api/create/card`, {data})
 
         return 'Создалось'
+    },
+
+    updateCard: async (data) => {
+        await axios.put(`http://localhost:5000/api/card/update/${data.id}`, {data})
+
+        return 'Создалось'
     }
 }
