@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './ItemCardPage.scss';
 import icondate from "../../images/icon/calendar.png";
 import iconcount from "../../images/icon/comments.png";
-import {Link, useParams} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import {cardApi} from "../../shared/api/cardApi";
 
 

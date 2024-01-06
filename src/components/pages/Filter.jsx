@@ -1,4 +1,4 @@
-import React, {Fragment, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Link, useParams} from "react-router-dom";
 import {cardApi} from "../../shared/api/cardApi";
 import ItemCard from "../ItemCard/ItemCard";

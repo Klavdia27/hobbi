@@ -2,6 +2,7 @@ import {filter} from "../shared/data/filter";
 
 class Url {
     _buildUrlFromSection(section) {
+        // eslint-disable-next-line default-case
         switch (section) {
             case 'Узоры вязания':
                 return 'knitting-patterns'
@@ -27,6 +28,7 @@ class Url {
     }
 
     getSectionFromUrl(section) {
+        // eslint-disable-next-line default-case
         switch (section) {
             case 'knitting-patterns':
                 return 'Узоры вязания'
