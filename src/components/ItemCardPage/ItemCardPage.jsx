@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './ItemCardPage.scss';
 import icondate from "../../images/icon/calendar.png";
 import iconcount from "../../images/icon/comments.png";
-import { useParams } from 'react-router-dom';
-import blogs from '../../dataBrowser/blogs';
-import { useSelector } from 'react-redux';
+import {Link, useParams} from 'react-router-dom';
 import {cardApi} from "../../shared/api/cardApi";
 
 
@@ -14,18 +12,9 @@ export const ItemCardPage = () => {
   const location = useParams();
 
   useEffect(() => {
-    if (location) {
-      blogs.forEach((it) => {
-        if (it.id === location.id) {
-          setElem(it)
-        }
-      } )
-    }
-  },[location]);
-
-  useEffect(() => {
       if (location) {
           const fetch = async () => {
+              console.log(location.id)
               setElem(await cardApi.getCardById(location.id))
           }
 
@@ -33,6 +22,7 @@ export const ItemCardPage = () => {
       }
   }, [location])
 
+    console.log(elem)
   return (
     
     //<div className="item-card__page">
@@ -49,26 +39,19 @@ export const ItemCardPage = () => {
         </div>
         <div className="item-cardpage__description"> {elem?.description} </div>
         <div className="item-cardpage__author" dangerouslySetInnerHTML={{__html: `${elem?.author}`}}></div>
-        <div dangerouslySetInnerHTML={{__html: `${elem?.material}`}}></div> 
+          <h4>Материалы</h4>
+        <div dangerouslySetInnerHTML={{__html: `${elem?.material}`}}></div>
+          <h4>Условности</h4>
         <div dangerouslySetInnerHTML={{__html: `${elem?.conventions}`}}></div> 
 <div>
 
 
 
-</div>
-        {/* <div className="item-cardpage__line"></div> */}
+    </div>
+         <div className="item-cardpage__line"></div>
 
-        <div>{elem?.instruction?.map((el) => 
-                <div>
-                  <br /> 
-                  <div dangerouslySetInnerHTML={{__html: `${el?.title}`}} className="item-cardpage__instruction-title"></div>
-                  <br></br> 
-                  <div dangerouslySetInnerHTML={{__html: `${el?.description}`}}></div> 
-                  <br></br> 
-                 <img className="item-cardpage__image" src={el?.image} alt="img" />   {/* а если нет ссылки как не отображать alt */}
-                  <br /> 
-                </div>
-         )}</div>
+          <h4>Инструкция</h4>
+          <div dangerouslySetInnerHTML={{__html: `${elem?.instruction}`}}></div>
 
         <button className="item-cardpage__button-link">
           <a href={elem?.link} className="link" rel="noreferrer" target="_blank">смотреть схему</a>

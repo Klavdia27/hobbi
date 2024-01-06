@@ -25,7 +25,7 @@ function App() {
 
           <Leftaside/>
 
-          <main className="app__main"> 
+          <main style={{flex: '1 1 100%'}} className="app__main">
 
             <Routes>
               <Route path='/' exact element={<Home/>} />

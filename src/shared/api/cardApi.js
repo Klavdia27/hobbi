@@ -20,7 +20,7 @@ export const cardApi = {
     },
 
     createCard: async (data) => {
-        await axios.post(`http://localhost:5000/api/create/card`, {data})
+        await axios.post(`http://localhost:5000/api/admin-add-card`, {data})
 
         return 'Создалось'
     }

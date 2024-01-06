@@ -23,7 +23,7 @@ export const ItemCards = () => {
 
   return (
     <div className="grid-container">
-      {cards.map(blog =><Link to={`/pagecard/${blog._id}`} onClick={() => addCount()}><ItemCard key={blog.id} blog={blog}/></Link> )}
+      {cards.map(blog =><Link to={`/pagecard/${blog.id}`} onClick={() => addCount()}><ItemCard key={blog.id} blog={blog}/></Link> )}
     </div>
   )
 }

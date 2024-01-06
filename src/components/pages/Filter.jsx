@@ -34,7 +34,7 @@ export const Filter = () => {
 
             <div className="grid-container">
                 {cards && cards.map(blog =>
-                    <Link to={`/pagecard/${blog._id}`} onClick={() => addCount()}>
+                    <Link to={`/pagecard/${blog.id}`} onClick={() => addCount()}>
                         <ItemCard key={blog.id} blog={blog}/>
                     </Link>
                 )}
