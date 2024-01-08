@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styles from '../../styles/Admin-panel.module.scss'
 import {cardApi} from "../../shared/api/cardApi";
 import {validation} from "../../helpers/validation";
-import {generateHtml, generateHtmlInstruction} from "../../helpers/generateHtml";
+import {generateHtml} from "../../helpers/generateHtml";
 
 export const Admin = () => {
     const [name, setName] = useState('')
@@ -18,34 +18,36 @@ export const Admin = () => {
     const [conventions, setConventions] = useState([''])
     const [instruction, setInstruction] = useState([{title: '', description: '', image: ''}, {title: '', description: '', image: ''}])
 
-
     const handleSubmit = async (e) => {
         e.preventDefault()
 
         if (validation({name, section, subsection, description, shortDescription, author, material, conventions, instruction, link, image})) {
-            const result = {}
+            const formData = new FormData()
 
-            var reader = new FileReader();
+            formData.append('name', name)
+            formData.append('section', section)
+            formData.append('subsection', subsection)
+            formData.append('description', description)
+            formData.append('shortDescription', shortDescription)
+            formData.append('author', author)
+            formData.append('material', generateHtml(material.slice(0, material.length - 1)))
+            formData.append('conventions', generateHtml(conventions.slice(0, conventions.length - 1)))
+            formData.append('link', link)
 
-            reader.readAsDataURL(image)
+            const ins = instruction.slice(0, instruction.length - 1)
 
-            reader.onloadend = async function() {
-                console.log('RESULT', reader.result)
+            formData.append('ins_image', image)
 
-                result.name = name
-                result.section = section
-                result.subsection = subsection
-                result.description = description
-                result.shortDescription = shortDescription
-                result.author = author
-                result.material = generateHtml(material.slice(0, material.length - 1))
-                result.conventions = generateHtml(conventions.slice(0, conventions.length - 1))
-                result.instruction = generateHtmlInstruction(instruction.slice(0, instruction.length - 1))
-                result.link = link
-                result.image = reader.result
-
-                await cardApi.createCard(result)
+            for (let i = 0; i < ins.length; i++) {
+                formData.append('ins_title', ins[i].title)
+                formData.append('ins_description', ins[i].description)
+                formData.append('ins_image', ins[i].image)
             }
+
+            const res = await cardApi.createCard(formData)
+
+
+            if (res === 'Создалось') alert('Создалось')
 
             // setName('')
             // setSection('')
@@ -58,12 +60,7 @@ export const Admin = () => {
             // setInstruction([{title: '', description: '', image: ''}, {title: '', description: '', image: ''}])
             // setLink('')
             // setImage('')
-
-            console.log(result)
-
-
         }
-
         else alert('No')
     }
 

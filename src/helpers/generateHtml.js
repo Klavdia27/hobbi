@@ -1,8 +1,6 @@
 export const generateHtml = (array) => {
     if (array.length !== 0 && array[0].length !== 0) {
-        array = array.map(item => `<li>${item}</li>`)
-        console.log(array)
-        return `<ul>${array.join('')}</ul>`
+        return `<ul>${array.map(item => `<li>${item}</li>`).join('')}</ul>`
     }
 
     return ''

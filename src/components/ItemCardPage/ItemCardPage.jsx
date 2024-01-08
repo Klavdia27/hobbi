@@ -14,7 +14,6 @@ export const ItemCardPage = () => {
   useEffect(() => {
       if (location) {
           const fetch = async () => {
-              console.log(location.id)
               setElem(await cardApi.getCardById(location.id))
           }
 
@@ -22,7 +21,7 @@ export const ItemCardPage = () => {
       }
   }, [location])
 
-    console.log(elem)
+
   return (
     
     //<div className="item-card__page">
